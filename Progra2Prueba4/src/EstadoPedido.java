@@ -33,6 +33,10 @@ public enum EstadoPedido {
         return descripcion;
     }
     
+    public int getDiasEstimados(){
+        return diasEstimados;
+    }
+    
     public boolean transicionarA(EstadoPedido nuevoEstado){
         if(this.esFinal){
             return false;
