@@ -43,12 +43,18 @@ public class GestorPedidos {
     }
     
     public Pedido[] listadoPorEstado(EstadoPedido estado){
-        Pedido[] p = new Pedido[pedidos.length];
         int contador = 0;
         for(int i = 0; i < pedidos.length;i++){
             if(pedidos[i].getEstado() == estado){
-                p[contador] = pedidos[i];
                 contador++;
+            }
+        }
+        Pedido[] p = new Pedido[contador];
+        int cantAgregados = 0;
+        for(int i = 0; i < contador; i++){
+            if(pedidos[i].getEstado() == estado){
+                p[cantAgregados] = pedidos[i];
+                cantAgregados++;
             }
         }
         return p;
